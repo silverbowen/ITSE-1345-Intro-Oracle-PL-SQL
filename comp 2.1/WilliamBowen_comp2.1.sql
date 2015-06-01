@@ -4,19 +4,23 @@
 select distinct idproduct from bb_basketitem order by idproduct;
 
 /* problem 02 */
-select b.idbasket, idproduct, p.productname, p.description
+select b.idbasket, idproduct, p.productname,
+  cast (p.description as varchar2(20)) "truncated description"
   from bb_basketitem b join bb_product p using (idproduct);
   
-select b.idbasket, b.idproduct, p.productname, p.description
+select b.idbasket, b.idproduct, p.productname,
+  cast (p.description as varchar2(20)) "truncated description"
   from bb_basketitem b, bb_product p
   where b.idproduct = p.idproduct;
 
 /* problem 03 */
-select idbasket, idproduct, p.productname, p.description, s.lastname
+select idbasket, idproduct, p.productname,
+  cast (p.description as varchar2(20)) "truncated description", s.lastname
   from bb_product p join bb_basketitem b using (idproduct)
   join  bb_basket k using (idbasket) join bb_shopper s using (idshopper);
   
-select b.idbasket, b.idproduct, p.productname, p.description, s.lastname
+select b.idbasket, b.idproduct, p.productname,
+  cast (p.description as varchar2(20)) "truncated description", s.lastname
   from bb_product p, bb_basketitem b, bb_basket k, bb_shopper s
   where p.idproduct = b.idproduct and b.idbasket = k.idbasket
     and k.idshopper = s.idshopper;
@@ -63,3 +67,6 @@ update contacts
   where Con_id = 1;
 select * from contacts;
 rollback;
+
+/* cleanup */
+drop table Contacts;

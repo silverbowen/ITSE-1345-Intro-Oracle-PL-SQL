@@ -1,0 +1,189 @@
+ IDPRODUCT
+----------
+         2 
+         4 
+         6 
+         7 
+         8 
+         9 
+        10 
+
+ 7 rows selected 
+
+  IDBASKET  IDPRODUCT PRODUCTNAME               truncated description
+---------- ---------- ------------------------- ---------------------
+         6          2 Capresso Ultima           Coffee and Espresso   
+        10          4 Coffee Grinder            Avoid blade grinders  
+         4          4 Coffee Grinder            Avoid blade grinders  
+        10          6 Guatamala                 heavy body, spicy tw  
+         3          6 Guatamala                 heavy body, spicy tw  
+        12          6 Guatamala                 heavy body, spicy tw  
+         8          7 Columbia                  dry, nutty flavor an  
+        16          7 Columbia                  dry, nutty flavor an  
+         7          7 Columbia                  dry, nutty flavor an  
+        15          7 Columbia                  dry, nutty flavor an  
+         9          7 Columbia                  dry, nutty flavor an  
+         5          7 Columbia                  dry, nutty flavor an  
+        12          7 Columbia                  dry, nutty flavor an  
+        10          8 Brazil                    well-balanced mellow  
+         9          8 Brazil                    well-balanced mellow  
+         8          8 Brazil                    well-balanced mellow  
+         7          8 Brazil                    well-balanced mellow  
+         5          8 Brazil                    well-balanced mellow  
+         3          8 Brazil                    well-balanced mellow  
+        16          8 Brazil                    well-balanced mellow  
+        15          8 Brazil                    well-balanced mellow  
+        12          8 Brazil                    well-balanced mellow  
+        13          9 Ethiopia                  distinctive berry-li  
+        12          9 Ethiopia                  distinctive berry-li  
+         5          9 Ethiopia                  distinctive berry-li  
+        11          9 Ethiopia                  distinctive berry-li  
+         5         10 Espresso                  dense, caramel-like   
+         6         10 Espresso                  dense, caramel-like   
+
+ 28 rows selected 
+
+  IDBASKET  IDPRODUCT PRODUCTNAME               truncated description
+---------- ---------- ------------------------- ---------------------
+         6          2 Capresso Ultima           Coffee and Espresso   
+        10          4 Coffee Grinder            Avoid blade grinders  
+         4          4 Coffee Grinder            Avoid blade grinders  
+        10          6 Guatamala                 heavy body, spicy tw  
+         3          6 Guatamala                 heavy body, spicy tw  
+        12          6 Guatamala                 heavy body, spicy tw  
+         8          7 Columbia                  dry, nutty flavor an  
+        16          7 Columbia                  dry, nutty flavor an  
+         7          7 Columbia                  dry, nutty flavor an  
+        15          7 Columbia                  dry, nutty flavor an  
+         9          7 Columbia                  dry, nutty flavor an  
+         5          7 Columbia                  dry, nutty flavor an  
+        12          7 Columbia                  dry, nutty flavor an  
+        10          8 Brazil                    well-balanced mellow  
+         9          8 Brazil                    well-balanced mellow  
+         8          8 Brazil                    well-balanced mellow  
+         7          8 Brazil                    well-balanced mellow  
+         5          8 Brazil                    well-balanced mellow  
+         3          8 Brazil                    well-balanced mellow  
+        16          8 Brazil                    well-balanced mellow  
+        15          8 Brazil                    well-balanced mellow  
+        12          8 Brazil                    well-balanced mellow  
+        13          9 Ethiopia                  distinctive berry-li  
+        12          9 Ethiopia                  distinctive berry-li  
+         5          9 Ethiopia                  distinctive berry-li  
+        11          9 Ethiopia                  distinctive berry-li  
+         5         10 Espresso                  dense, caramel-like   
+         6         10 Espresso                  dense, caramel-like   
+
+ 28 rows selected 
+
+  IDBASKET  IDPRODUCT PRODUCTNAME               truncated description LASTNAME           
+---------- ---------- ------------------------- --------------------- --------------------
+         6          2 Capresso Ultima           Coffee and Espresso   Somner               
+        10          4 Coffee Grinder            Avoid blade grinders  Sonnie               
+         4          4 Coffee Grinder            Avoid blade grinders  Carter               
+        12          6 Guatamala                 heavy body, spicy tw  Savid                
+        10          6 Guatamala                 heavy body, spicy tw  Sonnie               
+         3          6 Guatamala                 heavy body, spicy tw  Carter               
+        16          7 Columbia                  dry, nutty flavor an  Parker               
+        15          7 Columbia                  dry, nutty flavor an  Parker               
+        12          7 Columbia                  dry, nutty flavor an  Savid                
+         9          7 Columbia                  dry, nutty flavor an  Ratman               
+         8          7 Columbia                  dry, nutty flavor an  Ratman               
+         7          7 Columbia                  dry, nutty flavor an  Ratman               
+         5          7 Columbia                  dry, nutty flavor an  Somner               
+        16          8 Brazil                    well-balanced mellow  Parker               
+        15          8 Brazil                    well-balanced mellow  Parker               
+        12          8 Brazil                    well-balanced mellow  Savid                
+        10          8 Brazil                    well-balanced mellow  Sonnie               
+         9          8 Brazil                    well-balanced mellow  Ratman               
+         8          8 Brazil                    well-balanced mellow  Ratman               
+         7          8 Brazil                    well-balanced mellow  Ratman               
+         5          8 Brazil                    well-balanced mellow  Somner               
+         3          8 Brazil                    well-balanced mellow  Carter               
+        13          9 Ethiopia                  distinctive berry-li  Cast                 
+        12          9 Ethiopia                  distinctive berry-li  Savid                
+        11          9 Ethiopia                  distinctive berry-li  Sonnie               
+         5          9 Ethiopia                  distinctive berry-li  Somner               
+         6         10 Espresso                  dense, caramel-like   Somner               
+         5         10 Espresso                  dense, caramel-like   Somner               
+
+ 28 rows selected 
+
+  IDBASKET  IDPRODUCT PRODUCTNAME               truncated description LASTNAME           
+---------- ---------- ------------------------- --------------------- --------------------
+         6          2 Capresso Ultima           Coffee and Espresso   Somner               
+        10          4 Coffee Grinder            Avoid blade grinders  Sonnie               
+         4          4 Coffee Grinder            Avoid blade grinders  Carter               
+        12          6 Guatamala                 heavy body, spicy tw  Savid                
+        10          6 Guatamala                 heavy body, spicy tw  Sonnie               
+         3          6 Guatamala                 heavy body, spicy tw  Carter               
+        16          7 Columbia                  dry, nutty flavor an  Parker               
+        15          7 Columbia                  dry, nutty flavor an  Parker               
+        12          7 Columbia                  dry, nutty flavor an  Savid                
+         9          7 Columbia                  dry, nutty flavor an  Ratman               
+         8          7 Columbia                  dry, nutty flavor an  Ratman               
+         7          7 Columbia                  dry, nutty flavor an  Ratman               
+         5          7 Columbia                  dry, nutty flavor an  Somner               
+        16          8 Brazil                    well-balanced mellow  Parker               
+        15          8 Brazil                    well-balanced mellow  Parker               
+        12          8 Brazil                    well-balanced mellow  Savid                
+        10          8 Brazil                    well-balanced mellow  Sonnie               
+         9          8 Brazil                    well-balanced mellow  Ratman               
+         8          8 Brazil                    well-balanced mellow  Ratman               
+         7          8 Brazil                    well-balanced mellow  Ratman               
+         5          8 Brazil                    well-balanced mellow  Somner               
+         3          8 Brazil                    well-balanced mellow  Carter               
+        13          9 Ethiopia                  distinctive berry-li  Cast                 
+        12          9 Ethiopia                  distinctive berry-li  Savid                
+        11          9 Ethiopia                  distinctive berry-li  Sonnie               
+         5          9 Ethiopia                  distinctive berry-li  Somner               
+         6         10 Espresso                  dense, caramel-like   Somner               
+         5         10 Espresso                  dense, caramel-like   Somner               
+
+ 28 rows selected 
+
+  IDBASKET  IDSHOPPER DTORDERED                                   
+---------- ---------- ---------------------------------------------
+         4         21 February  12, 2012                            
+         5         22 February  19, 2012                            
+         8         23 February  16, 2012                            
+        10         24 February  07, 2012                            
+        11         24 February  27, 2012                            
+        12         25 February  19, 2012                            
+
+ 6 rows selected 
+
+ IDPRODUCT TOTAL SOLD
+---------- ----------
+         6          4 
+         2          1 
+         4          2 
+         8         11 
+         7          7 
+         9          6 
+        10          3 
+
+ 7 rows selected 
+
+ IDPRODUCT TOTAL SOLD
+---------- ----------
+         2          1 
+         4          2 
+
+ IDPRODUCT PRODUCTNAME                    PRICE
+---------- ------------------------- ----------
+         1 CapressoBar Model #351         99.99 
+         2 Capresso Ultima               129.99 
+
+table CONTACTS created.
+1 rows inserted.
+1 rows inserted.
+committed.
+1 rows updated.
+    CON_ID COMPANY_NAME                   EMAIL                          LAST_DATE    CON_CNT
+---------- ------------------------------ ------------------------------ --------- ----------
+         1 foo                            foo@bar.com                    31-MAY-15        123 
+         2 baz                            baz@zoom.com                   31-MAY-15        456 
+
+rollback complete.
+table CONTACTS dropped.
