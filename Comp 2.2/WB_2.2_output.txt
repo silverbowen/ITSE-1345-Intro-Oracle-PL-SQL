@@ -1,0 +1,32 @@
+10-DEC-07
+10
+Bowen
+
+This customer spent:
+42
+They are rated LOW.
+
+This customer spent:
+142
+They are rated MID.
+
+This customer spent:
+242
+They are rated HIGH.
+
+You have:
+123.45
+Each widget costs:
+16.65
+Widgets you can buy:
+7
+This will cost:
+116.55
+
+Member:
+Y
+Items:
+13
+Shipping cost:
+9
+
