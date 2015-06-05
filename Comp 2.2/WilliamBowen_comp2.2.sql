@@ -51,7 +51,7 @@ declare
   
 begin   
   case
-    when tst_num = 200 then
+    when tst_num > 200 then
      dbms_output.put_line('This customer spent:');
      dbms_output.put_line(tst_num);
      dbms_output.put_line('They are rated HIGH.');       
