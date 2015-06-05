@@ -6,7 +6,7 @@ set serveroutput on
 
 /* Assignment 3-1 */
 
-variable g_baskett number
+variable g_basket number
 
 begin
   :g_basket := 3;
@@ -17,11 +17,8 @@ DECLARE
   lv_ship_date bb_basketstatus.dtstage%TYPE;
   lv_shipper_txt bb_basketstatus.shipper%TYPE;
   lv_ship_num bb_basketstatus.shippingnum%TYPE;
-<<<<<<< HEAD
   lv_bask_num bb_basketstatus.idbasket%TYPE := :g_basket;
-=======
-  lv_bask_num bb_basketstatus.idbasket%TYPE := 3;
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
+
 BEGIN
   SELECT dtstage, shipper, shippingnum
    INTO lv_ship_date, lv_shipper_txt, lv_ship_num
@@ -34,11 +31,8 @@ BEGIN
 END;
 /
 
-<<<<<<< HEAD
 variable g_basket number
 
-=======
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
 begin
   :g_basket := 7;
 end;
@@ -48,11 +42,8 @@ DECLARE
   lv_ship_date bb_basketstatus.dtstage%TYPE;
   lv_shipper_txt bb_basketstatus.shipper%TYPE;
   lv_ship_num bb_basketstatus.shippingnum%TYPE;
-<<<<<<< HEAD
   lv_bask_num bb_basketstatus.idbasket%TYPE := :g_basket;
-=======
-  lv_bask_num bb_basketstatus.idbasket%TYPE := 3;
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
+  
 BEGIN
   SELECT dtstage, shipper, shippingnum
    INTO lv_ship_date, lv_shipper_txt, lv_ship_num
@@ -67,11 +58,8 @@ END;
 
 /* Assignment 3-2 */
 
-<<<<<<< HEAD
 variable g_basket number
 
-=======
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
 begin
   :g_basket := 3;
 end;
@@ -79,11 +67,8 @@ end;
 
 DECLARE
   rec_ship bb_basketstatus%ROWTYPE;
-<<<<<<< HEAD
   lv_bask_num bb_basketstatus.idbasket%TYPE := :g_basket;
-=======
-  lv_bask_num bb_basketstatus.idbasket%TYPE := 3;
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
+  
 BEGIN
   SELECT *
    INTO rec_ship
@@ -109,27 +94,17 @@ end;
 DECLARE
  lv_total_num NUMBER(6,2);
  lv_rating_txt VARCHAR2(4);
-<<<<<<< HEAD
  lv_shop_num bb_basket.idshopper%TYPE := :g_shopper;
  
-BEGIN
- SELECT SUM(total)
-    into lv_total_num /*my add */
-  FROM bb_basket
-  WHERE idshopper = lv_shop_num /* my add */ 
-=======
- lv_shop_num bb_basket.idshopper%TYPE;
 BEGIN
  SELECT SUM(total)
   into lv_total_num /*my add */
   FROM bb_basket
   WHERE idShopper = :g_shopper /* my add */ 
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
     AND orderplaced = 1
   GROUP BY idshopper;
   IF lv_total_num > 200 THEN
   /* begin my block */ 
-<<<<<<< HEAD
     lv_rating_txt := 'HIGH';       
   elsif lv_total_num > 100 then
     lv_rating_txt := 'MID';       
@@ -137,17 +112,7 @@ BEGIN
     lv_rating_txt := 'LOW';
   /* end my block */
   END IF; 
-   DBMS_OUTPUT.PUT_LINE('Shopper '||:lv_shop_num||' is rated '||lv_rating_txt);
-=======
-    lvrating_txt := 'HIGH';       
-  elsif :lv_total_num > 100 then
-    lvrating_txt := 'MID';       
-  else
-    lvrating_txt := 'LOW';
-  /* end my block */
-  END IF; 
    DBMS_OUTPUT.PUT_LINE('Shopper '||:g_shopper||' is rated '||lv_rating_txt);
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
 END;
 /
 
@@ -159,11 +124,8 @@ SELECT SUM(total)
   
 /* Assignment 3-4 */
 
-<<<<<<< HEAD
 variable g_shopper number
 
-=======
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
 begin
   :g_shopper := 22;
 end;
@@ -172,45 +134,25 @@ end;
 DECLARE
  lv_total_num NUMBER(6,2);
  lv_rating_txt VARCHAR2(4);
-<<<<<<< HEAD
  lv_shop_num bb_basket.idshopper%TYPE := :g_shopper;
-=======
- lv_shop_num bb_basket.idshopper%TYPE;
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
 BEGIN
  SELECT SUM(total)
   into lv_total_num /*my add */
   FROM bb_basket
-<<<<<<< HEAD
-  WHERE idshopper = lv_shop_num /* my add */ 
-=======
-  WHERE idShopper = :g_shopper /* my add */ 
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
+  WHERE idshopper = lv_shop_num /* my add */
     AND orderplaced = 1
   GROUP BY idshopper;
   /* begin my block */ 
   case
     when lv_total_num > 200 then
-<<<<<<< HEAD
     lv_rating_txt := 'HIGH';     
     when lv_total_num > 100 then
     lv_rating_txt := 'MID';
     else
     lv_rating_txt := 'LOW';      
   end case;
-  /* end my block */
-   DBMS_OUTPUT.PUT_LINE('Shopper '||lv_shop_num||' is rated '||lv_rating_txt);
-=======
-    lvrating_txt := 'HIGH';     
-    when lv_total_num > 100 then
-    lvrating_txt := 'MID';
-    else
-    lvrating_txt := 'LOW';      
-  end case;
-  /* end my block */
-  END IF; 
+  /* end my block */ 
    DBMS_OUTPUT.PUT_LINE('Shopper '||:g_shopper||' is rated '||lv_rating_txt);
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
 END;
 /
 
@@ -231,7 +173,6 @@ begin
 end;
 /
 
-<<<<<<< HEAD
 declare
   running_total number(4) := 0;
   product_cost number(3);
@@ -373,10 +314,3 @@ begin
 
 end;
 /
-=======
-/* Assignment 3-6 */
-
-/* Assignment 3-7 */
-
-/* Assignment 3-8 */
->>>>>>> 366540a344e7ac83051ee819022340f386e249ff
