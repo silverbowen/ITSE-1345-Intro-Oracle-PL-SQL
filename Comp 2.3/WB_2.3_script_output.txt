@@ -1,0 +1,71 @@
+anonymous block completed
+anonymous block completed
+Date Shipped: 25-JAN-12
+Shipper: UPS
+Shipping #: ZW845584GD89H569
+
+anonymous block completed
+
+Error starting at line : 40 in command -
+DECLARE
+  lv_ship_date bb_basketstatus.dtstage%TYPE;
+  lv_shipper_txt bb_basketstatus.shipper%TYPE;
+  lv_ship_num bb_basketstatus.shippingnum%TYPE;
+  lv_bask_num bb_basketstatus.idbasket%TYPE := :g_basket;
+BEGIN
+  SELECT dtstage, shipper, shippingnum
+   INTO lv_ship_date, lv_shipper_txt, lv_ship_num
+   FROM bb_basketstatus
+   WHERE idbasket = lv_bask_num
+    AND idstage = 5;
+  DBMS_OUTPUT.PUT_LINE('Date Shipped: '||lv_ship_date);
+  DBMS_OUTPUT.PUT_LINE('Shipper: '||lv_shipper_txt);
+  DBMS_OUTPUT.PUT_LINE('Shipping #: '||lv_ship_num);
+END;
+Error report -
+ORA-01403: no data found
+ORA-06512: at line 7
+01403. 00000 -  "no data found"
+*Cause:    No data was found from the objects.
+*Action:   There was no data from the objects which may be due to end of fetch.
+anonymous block completed
+anonymous block completed
+Date Shipped: 25-JAN-12
+Shipper: UPS
+Shipping #: ZW845584GD89H569
+Notes: Customer called to confirm shipment
+
+anonymous block completed
+anonymous block completed
+Shopper  is rated HIGH
+
+SUM(TOTAL)
+----------
+    210.21 
+
+anonymous block completed
+anonymous block completed
+Shopper 22 is rated HIGH
+
+SUM(TOTAL)
+----------
+    210.21 
+
+anonymous block completed
+anonymous block completed
+you can buy 3 widgets at $29 each for $87 if you have $100 to spend.
+
+anonymous block completed
+anonymous block completed
+Basket 5 has 4 items. Shipping is  $7.50
+
+anonymous block completed
+anonymous block completed
+Basket 12 has a subtotal of $72.40, shipping is  $8.00,
+          tax is  $3.26, and the total is $83.66
+
+anonymous block completed
+anonymous block completed
+Basket 12 has a subtotal of $72.40, shipping is  $8.00,
+          tax is  $3.26, and the total is $83.66
+
