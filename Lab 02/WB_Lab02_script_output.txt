@@ -1,0 +1,245 @@
+table THEATER created.
+sequence TEMP_SEQ created.
+anonymous block completed
+anonymous block completed
+anonymous block completed
+    STU_ID LNAME      FNAME    MI SEX MAJOR     HOME_STATE
+---------- ---------- -------- -- --- --------- ----------
+     10001 Smith      Ron      M  M   Math      Tx         
+     10002 Jones      Peter    A  M   English   Tx         
+     10003 Peters     Anne     A  F   English   Me         
+     10004 Johnson    John     J  M   CompSci   Ca         
+     10005 Penders    Alton    P  F   Math      Ga         
+     10006 Allen      Diane    J  F   Geography Minn       
+     10007 Gill       Jennifer    F   CompSci   Tx         
+     10008 Johns      Roberta     F   CompSci   Tx         
+     10009 Wier       Paul        M   Math      Ala        
+     10010 Evans      Richard     M   English   Tx         
+
+ 10 rows selected 
+
+COURSE_ID   SECTION# C_NAME              C_DESCRIPTION         
+--------- ---------- ------------------- -----------------------
+COSC1300           1 Intro to Comp.      First Computer Course   
+ITSE2309           1 Intro to DB         First Database Course   
+GEOG1791           2 World Geography     Second Geography Course 
+COSC1315           1 Intro to Prog.      Second Computer Course  
+ITSE1345           1 Intro to DB Prog.   Second Database Course  
+ENGL2617           2 English Literature  Second English Course   
+MATH1101           1 Calculus 1          Second Math Course      
+ENGL1001           1 American Literature First English Course    
+MATH1011           1 Trig. &Algebra      First Math Course       
+GEOG1010           1 Texas Geography     First Geography Course  
+
+ 10 rows selected 
+
+    STU_ID COURSE_ID   SECTION#
+---------- --------- ----------
+     10001 MATH1101           1 
+     10002 ENGL2617           2 
+     10003 ENGL1001           1 
+     10003 ENGL2617           2 
+     10003 GEOG1010           1 
+     10004 COSC1315           1 
+     10005 MATH1101           1 
+     10006 GEOG1010           1 
+     10006 GEOG1791           2 
+     10007 COSC1315           1 
+     10007 ITSE2309           1 
+     10008 COSC1315           1 
+     10009 ITSE2309           1 
+     10010 ENGL2617           2 
+
+ 14 rows selected 
+
+desc Student
+Name       Null Type         
+---------- ---- ------------ 
+STU_ID          NUMBER(5)    
+LNAME           VARCHAR2(10) 
+FNAME           VARCHAR2(8)  
+MI              VARCHAR2(2)  
+SEX             VARCHAR2(3)  
+MAJOR           VARCHAR2(9)  
+HOME_STATE      VARCHAR2(10) 
+
+desc Course
+Name          Null Type         
+------------- ---- ------------ 
+COURSE_ID          VARCHAR2(8)  
+SECTION#           NUMBER(8)    
+C_NAME             VARCHAR2(19) 
+C_DESCRIPTION      VARCHAR2(23) 
+
+desc Student_Course
+Name      Null Type        
+--------- ---- ----------- 
+STU_ID         NUMBER(5)   
+COURSE_ID      VARCHAR2(8) 
+SECTION#       NUMBER(3)   
+
+anonymous block completed
+Student ID 10001 is signed up for 1 courses.
+Student ID 10002 is signed up for 1 courses.
+Student ID 10003 is signed up for 3 courses.
+Student ID 10004 is signed up for 1 courses.
+Student ID 10005 is signed up for 1 courses.
+Student ID 10006 is signed up for 2 courses.
+Student ID 10007 is signed up for 2 courses.
+Student ID 10008 is signed up for 1 courses.
+Student ID 10009 is signed up for 1 courses.
+Student ID 10010 is signed up for 1 courses.
+
+anonymous block completed
+There are 10 students enrolled.
+
+anonymous block completed
+less than 10 courses established
+
+anonymous block completed
+Student 10001 is an in-state student.
+Student 10002 is an in-state student.
+Student 10003 is an out-of-state student.
+Student 10004 is an out-of-state student.
+Student 10005 is an out-of-state student.
+Student 10006 is an out-of-state student.
+Student 10007 is an in-state student.
+Student 10008 is an in-state student.
+Student 10009 is an out-of-state student.
+Student 10010 is an in-state student.
+There are 5 in-state students.
+There are 5 out-of-state students.
+
+old:<<problem7block>>
+declare
+  Which_Course Student_Course.Course_ID%type
+    := '&Pick_A_Course';
+  Which_Stu Student_Course.Stu_ID%type
+    := &Pick_A_Student;
+  type Type_Stu_Course is table of
+    Student_Course%rowtype
+    index by binary_integer;
+  Tbl_Stu_Course Type_Stu_Course;
+  flag number(1) := 0;
+
+begin
+    select * bulk collect
+      into Tbl_Stu_Course
+    from Student_Course;
+  for i in 1..10 loop
+    if Tbl_Stu_Course(i).Stu_ID = Which_Stu and
+          Tbl_Stu_Course(i).Course_ID = Which_Course then 
+      dbms_output.put_line(
+      'Student ' || Which_Stu
+      || ' is taking ' || Which_Course);
+      flag := 1;
+    end if;
+  end loop;
+  if flag = 0 then
+    dbms_output.put_line(
+    'Student ' || Which_Stu
+    || ' is not taking ' || Which_Course);
+  end if;
+end problem7block;
+new:<<problem7block>>
+declare
+  Which_Course Student_Course.Course_ID%type
+    := 'MATH1101';
+  Which_Stu Student_Course.Stu_ID%type
+    := 10003;
+  type Type_Stu_Course is table of
+    Student_Course%rowtype
+    index by binary_integer;
+  Tbl_Stu_Course Type_Stu_Course;
+  flag number(1) := 0;
+
+begin
+    select * bulk collect
+      into Tbl_Stu_Course
+    from Student_Course;
+  for i in 1..10 loop
+    if Tbl_Stu_Course(i).Stu_ID = Which_Stu and
+          Tbl_Stu_Course(i).Course_ID = Which_Course then 
+      dbms_output.put_line(
+      'Student ' || Which_Stu
+      || ' is taking ' || Which_Course);
+      flag := 1;
+    end if;
+  end loop;
+  if flag = 0 then
+    dbms_output.put_line(
+    'Student ' || Which_Stu
+    || ' is not taking ' || Which_Course);
+  end if;
+end problem7block;
+anonymous block completed
+Student 10003 is not taking MATH1101
+
+anonymous block completed
+Student #10001 is a male.
+Student #10001 is a Math major.
+Student #10002 is a male.
+Student #10002 is an English major.
+Student #10003 is a female.
+Student #10003 is an English major.
+Student #10004 is a male.
+Student #10004 is a Computer Science major.
+Student #10005 is a female.
+Student #10005 is a Math major.
+Student #10006 is a female.
+Student #10006 is a Geography major.
+Student #10007 is a female.
+Student #10007 is a Computer Science major.
+Student #10008 is a female.
+Student #10008 is a Computer Science major.
+Student #10009 is a male.
+Student #10009 is a Math major.
+Student #10010 is a male.
+Student #10010 is an English major.
+
+anonymous block completed
+Student #10001 is a male.
+Student #10001 is a Math major.
+Student #10002 is a male.
+Student #10002 is an English major.
+Student #10003 is a female.
+Student #10003 is an English major.
+Student #10004 is a male.
+Student #10004 is a Computer Science major.
+Student #10005 is a female.
+Student #10005 is a Math major.
+Student #10006 is a female.
+Student #10006 is a Geography major.
+Student #10007 is a female.
+Student #10007 is a Computer Science major.
+Student #10008 is a female.
+Student #10008 is a Computer Science major.
+Student #10009 is a male.
+Student #10009 is a Math major.
+Student #10010 is a male.
+Student #10010 is an English major.
+
+anonymous block completed
+anonymous block completed
+    STU_ID LNAME      FNAME    MI SEX MAJOR     HOME_STATE
+---------- ---------- -------- -- --- --------- ----------
+     10001 Smith      Ron      M  M   Math      Tx         
+     10002 Jones      Peter    A  M   English   Tx         
+     10003 Peters     Anne     A  F   English   Me         
+     10004 Johnson    John     J  M   CompSci   Ca         
+     10005 Penders    Alton    P  F   Math      Ga         
+     10006 Allen      Diane    J  F   Geography Minn       
+     10007 Gill       Jennifer    F   CompSci   Tx         
+     10008 Johns      Roberta     F   CompSci   Tx         
+     10009 Wier       Paul        M   Math      Ala        
+     10010 Evans      Richard     M   English   Tx         
+
+ 10 rows selected 
+
+table THEATER dropped.
+sequence TEMP_SEQ dropped.
+table STUDENT dropped.
+table COURSE dropped.
+table STUDENT_COURSE dropped.
+table TEMP_TABLE dropped.
+

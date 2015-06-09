@@ -1,6 +1,19 @@
+/* William Bowen
+   ITSE 1345
+   Lab 02 */
+   
 set serveroutput on;
-
 /
+
+-- Opening cleanup - uncomment if needed
+
+--drop table Theater;
+--drop sequence temp_seq;
+--drop table Student;
+--drop table Course;
+--drop table Student_Course;
+--drop table Temp_Table;
+--/
 
 /* Problem 01
 
@@ -35,12 +48,6 @@ begin
   null;
 
 end;
-
-/
-
-drop table Theater;
-drop sequence temp_seq;
-
 /
 
 /* Problem 02
@@ -260,9 +267,9 @@ student and a count of the students in and out of state at the end of the
 program. Print out the code, the proof that it successfully compiled and
 show test results. No error processing required. */
 
-/* My understanding is that named blocks are functions, procedures and
-the like. We haven't covered any of that yet. Did you mean labelled blocks?
-I went ahead and labelled this last five. */
+/* My understanding is that named blocks are functions, procedures and the
+like. We haven't covered any of that yet and you specifically said not use
+those. Did you mean labelled blocks? I went ahead and labelled them :) */
 
 
 <<problem6block>>
@@ -448,9 +455,54 @@ processing required. Hint:(You will need to create the Temporary Table
 first. Use a loop to take each row from the student table and place
 it in the Temporary Table). */
 
+begin
+  execute immediate
+  'create table Temp_Table(
+  Stu_ID number(5),
+  Lname varchar2(10),
+  Fname varchar2(8),
+  Mi varchar2(2),
+  Sex varchar2(3),
+  Major varchar2(9),
+  Home_State varchar2(10))';
+  
+end;
+/
+  
+<<problem10block>>
+declare
+  Rec_Student Student%rowtype;
+  Counter number(2) := 1;
+  End_Count number(2);
 
---drop table Student;
---drop table Course;
---drop table Student_Course;
---/
---  
+begin
+  select count(Stu_ID)
+    into End_Count
+  from Student;
+  loop
+    select *
+      into Rec_Student
+    from Student
+    where Stu_ID = Counter + 10000;
+    insert into Temp_Table
+      values Rec_Student;
+    exit when Counter = End_Count;
+    Counter := Counter + 1;
+  end loop;
+
+end problem10block;
+/
+
+select * from Temp_Table;
+
+/
+
+-- Ending cleanup
+
+drop table Theater;
+drop sequence temp_seq;
+drop table Student;
+drop table Course;
+drop table Student_Course;
+drop table Temp_Table;
+/
