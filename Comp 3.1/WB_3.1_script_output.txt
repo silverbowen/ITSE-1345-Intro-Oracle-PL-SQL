@@ -1,0 +1,165 @@
+anonymous block completed
+anonymous block completed
+All items in stock!
+
+anonymous block completed
+ IDSHOPPER PROMO SUM(BI.QUANTITY*BI.PRICE)
+---------- ----- -------------------------
+        21 B                          55.1 
+        24                            48.9 
+        27                            32.4 
+        25 B                          72.4 
+        26                              20 
+        22 A                        191.59 
+        23 B                          64.8 
+
+ 7 rows selected 
+
+7 rows updated.
+3 rows updated.
+1 rows updated.
+committed.
+4 rows updated.
+committed.
+PROMO
+-----
+      
+      
+      
+      
+      
+      
+      
+
+ 7 rows selected 
+
+anonymous block completed
+
+Error starting at line : 108 in command -
+DECLARE
+  lv_tax_num NUMBER(2,2);
+BEGIN
+ CASE  'NJ' 
+  WHEN 'VA' THEN lv_tax_num := .04;
+  WHEN 'NC' THEN lv_tax_num := .02;  
+  WHEN 'NY' THEN lv_tax_num := .06;  
+ END CASE;
+ DBMS_OUTPUT.PUT_LINE('tax rate = '||lv_tax_num);
+END;
+Error report -
+ORA-06592: CASE not found while executing CASE statement
+ORA-06512: at line 4
+06592. 00000 -  "CASE not found while executing CASE statement"
+*Cause:    A CASE statement must either list all possible cases or have an
+           else clause.
+*Action:   Add all missing cases or an else clause.
+anonymous block completed
+No tax.
+
+anonymous block completed
+anonymous block completed
+Invalid shopper id.
+
+anonymous block completed
+Invalid shopper id.
+
+anonymous block completed
+no rows selected
+
+
+anonymous block completed
+Invalid original basket id.
+
+     EMPNO        SAL   PROPOSED
+---------- ---------- ----------
+      7698       2850        171 
+      7782       2450        147 
+      7566       2975      178.5 
+      7654       1250         75 
+      7499       1600         96 
+      7844       1500         90 
+      7900        950         57 
+      7521       1250         75 
+      7902       3000        180 
+      7369        800         48 
+      7788       3000        180 
+      7876       1100         66 
+      7934       1300         78 
+
+ 13 rows selected 
+
+anonymous block completed
+7698 is currently making:         $2850
+They are eligible for a raise of: $171
+This makes their new salary:      $3021
+
+7782 is currently making:         $2450
+They are eligible for a raise of: $147
+This makes their new salary:      $2597
+
+7566 is currently making:         $2975
+They are eligible for a raise of: $178.5
+This makes their new salary:      $3153.5
+
+7654 is currently making:         $1250
+They are eligible for a raise of: $75
+This makes their new salary:      $1325
+
+7499 is currently making:         $1600
+They are eligible for a raise of: $96
+This makes their new salary:      $1696
+
+7844 is currently making:         $1500
+They are eligible for a raise of: $90
+This makes their new salary:      $1590
+
+7900 is currently making:         $950
+They are eligible for a raise of: $57
+This makes their new salary:      $1007
+
+7521 is currently making:         $1250
+They are eligible for a raise of: $75
+This makes their new salary:      $1325
+
+7902 is currently making:         $3000
+They are eligible for a raise of: $180
+This makes their new salary:      $3180
+
+7369 is currently making:         $800
+They are eligible for a raise of: $48
+This makes their new salary:      $848
+
+7788 is currently making:         $3000
+They are eligible for a raise of: $180
+This makes their new salary:      $3180
+
+7876 is currently making:         $1100
+They are eligible for a raise of: $66
+This makes their new salary:      $1166
+
+7934 is currently making:         $1300
+They are eligible for a raise of: $78
+This makes their new salary:      $1378
+
+Total salary increases were:      $1441.5
+
+
+     EMPNO        SAL
+---------- ----------
+      7698       3021 
+      7782       2597 
+      7566     3153.5 
+      7654       1325 
+      7499       1696 
+      7844       1590 
+      7900       1007 
+      7521       1325 
+      7902       3180 
+      7369        848 
+      7788       3180 
+      7876       1166 
+      7934       1378 
+
+ 13 rows selected 
+
+rollback complete.

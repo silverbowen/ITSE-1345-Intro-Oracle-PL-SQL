@@ -1,0 +1,65 @@
+All items in stock!
+
+No tax.
+
+Invalid shopper id.
+
+Invalid shopper id.
+
+Invalid original basket id.
+
+7698 is currently making:         $2850
+They are eligible for a raise of: $171
+This makes their new salary:      $3021
+
+7782 is currently making:         $2450
+They are eligible for a raise of: $147
+This makes their new salary:      $2597
+
+7566 is currently making:         $2975
+They are eligible for a raise of: $178.5
+This makes their new salary:      $3153.5
+
+7654 is currently making:         $1250
+They are eligible for a raise of: $75
+This makes their new salary:      $1325
+
+7499 is currently making:         $1600
+They are eligible for a raise of: $96
+This makes their new salary:      $1696
+
+7844 is currently making:         $1500
+They are eligible for a raise of: $90
+This makes their new salary:      $1590
+
+7900 is currently making:         $950
+They are eligible for a raise of: $57
+This makes their new salary:      $1007
+
+7521 is currently making:         $1250
+They are eligible for a raise of: $75
+This makes their new salary:      $1325
+
+7902 is currently making:         $3000
+They are eligible for a raise of: $180
+This makes their new salary:      $3180
+
+7369 is currently making:         $800
+They are eligible for a raise of: $48
+This makes their new salary:      $848
+
+7788 is currently making:         $3000
+They are eligible for a raise of: $180
+This makes their new salary:      $3180
+
+7876 is currently making:         $1100
+They are eligible for a raise of: $66
+This makes their new salary:      $1166
+
+7934 is currently making:         $1300
+They are eligible for a raise of: $78
+This makes their new salary:      $1378
+
+Total salary increases were:      $1441.5
+
+
