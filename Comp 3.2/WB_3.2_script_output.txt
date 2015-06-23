@@ -1,0 +1,132 @@
+PROCEDURE PROD_NAME_SP compiled
+anonymous block completed
+ IDPRODUCT description                                      
+---------- --------------------------------------------------
+         1 CapressoBar Model #388                             
+         2 Coffee and Espresso and Cappuccino Machine. Brews  
+           from one espresso to two six ounce cups of coffee  
+
+         3 A unique coffeemaker from those proud craftsmen in 
+            windy Normandy.                                   
+
+         4 Avoid blade grinders! This mill grinder allows you 
+            to choose a fine grind to a coarse grind.         
+
+         5 Spicy and intense with herbal aroma.               
+         6 heavy body, spicy twist, aromatic and smokey flavo 
+           r.                                                 
+
+         7 dry, nutty flavor and smoothness                   
+         8 well-balanced mellow flavor, a medium body with hi 
+           nts of cocoa and a mild, nut-like aftertaste       
+
+         9 distinctive berry-like flavor and aroma, reminds m 
+           any of a fruity, memorable wine.                   
+
+        10 dense, caramel-like sweetness with a soft acidity. 
+            Roasted somewhat darker than traditional Italian. 
+
+
+ 10 rows selected 
+
+PROCEDURE PROD_ADD_SP compiled
+anonymous block completed
+ IDPRODUCT PRODUCTNAME     description          PRODUCTIMAGE PRICE ACTIVE
+---------- --------------- -------------------- ------------ ----- ------
+        15 Roasted Blend   Well-balanced mix of roasted.jpg    9.5      1 
+                            roasted beans, medi                           
+                           um body                                        
+
+
+PROCEDURE TAX_COST_SP compiled
+anonymous block completed
+G_TAX
+---
+4.5
+
+PROCEDURE BASKET_CONFIRM_SP compiled
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+committed.
+anonymous block completed
+  SUBTOTAL   SHIPPING        TAX      TOTAL ORDERPLACED
+---------- ---------- ---------- ---------- -----------
+      64.8          8       1.94      74.74           1 
+
+PROCEDURE STATUS_SHIP_SP compiled
+anonymous block completed
+  IDSTATUS   IDBASKET    IDSTAGE DTSTAGE   SHIPPER SHIPPINGNUM        
+---------- ---------- ---------- --------- ------- --------------------
+         1          3          1 24-JAN-12                              
+         2          3          5 25-JAN-12 UPS     ZW845584GD89H569     
+         3          4          1 13-FEB-12                              
+         4          4          5 14-FEB-12                              
+        15         12          3                                        
+        16          3          3 20-FEB-07 UPS     zw2384yxk4957        
+
+ 6 rows selected 
+
+PROCEDURE STATUS_SP compiled
+anonymous block completed
+DATE_HOST
+---------
+14-FEB-12
+
+STATUS_HOST
+-----------
+Backordered
+
+anonymous block completed
+DATE_HOST
+------
+
+STATUS_HOST
+-------------------
+No status available
+
+PROCEDURE PROMO_SHIP_SP compiled
+anonymous block completed
+ IDSHOPPER MONTH YEAR PROMO_FLAG USED
+---------- ----- ---- ---------- ----
+        21 APR   2012 1          N    
+        26 APR   2012 1          N    
+
+PROCEDURE BASKET_ADD_SP compiled
+anonymous block completed
+IDBASKETITEM  IDPRODUCT PRICE   QUANTITY   IDBASKET    OPTION1    OPTION2
+------------ ---------- ----- ---------- ---------- ---------- ----------
+          15          6     5          1          3          1          4 
+          16          8  10.8          2          3          2          4 
+          17          4  28.5          1          4                       
+          18          7  10.8          1          5          2          3 
+          19          8  10.8          1          5          2          3 
+          20          9    10          1          5          2          3 
+          21         10    10          1          5          2          3 
+          22         10    10          2          6          2          4 
+          23          2 129.99          1          6                       
+          24          7  10.8          1          7          2          3 
+          25          8  10.8          1          7          2          3 
+          26          7  10.8          1          8          2          3 
+          27          8  10.8          1          8          2          3 
+          28          7  10.8          1          9          2          3 
+          29          8  10.8          1          9          2          3 
+          30          6     5          1         10          1          3 
+          31          8   5.4          1         10          1          3 
+          32          4  28.5          1         10                       
+          33          9    10          1         11          2          3 
+          34          8  10.8          2         12          2          3 
+          35          9    10          2         12          2          3 
+          36          6    10          2         12          2          3 
+          37          7  10.8          1         12          2          3 
+          38          9    10          2         13          2          3 
+          40          8  10.8          1         15          2          3 
+          41          7   5.4          1         15          1          3 
+          42          8  10.8          1         16          2          3 
+          43          7   5.4          1         16          1          3 
+          44          7  10.8          3         17          2          3 
+          45          8  10.8          3         17          2          3 
+          50          8  10.8          1         14          2          4 
+
+ 31 rows selected 
+
