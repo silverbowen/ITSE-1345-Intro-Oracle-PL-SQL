@@ -1,0 +1,24 @@
+Emp# LName  Job      Mgr  HireDate  Sal  Comm Dept
+7654 MARTIN SALESMAN 7698 28-SEP-99 1250 1400 30
+Employee not found
+
+01-JAN-11 and 02-FEB-22 in returns   -1
+01-JAN-11 and 01-JAN-11 in returns   0
+02-FEB-22 and 01-JAN-11 in returns   1
+
+Cust_ID   Cust_Name   Acct_ID   A_Type  State
+90001     B and B     A-11101   PR      AK
+Account_ID not valid
+Cust_ID   Cust_Name   Acct_ID   A_Type  State
+99999     xxxxxxx     x-99999   xx      xx
+
+Now is the Time.<end
+Now is<end
+6
+Now is the Time.<end
+Now is the Time.         <end
+25
+    Now is the Time.         <end
+Now is the Time<end
+15
+

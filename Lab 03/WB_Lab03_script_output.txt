@@ -1,0 +1,161 @@
+PROCEDURE FIND_EMP_DATA compiled
+anonymous block completed
+Emp# LName  Job      Mgr  HireDate  Sal  Comm Dept
+7654 MARTIN SALESMAN 7698 28-SEP-99 1250 1400 30
+Employee not found
+
+FUNCTION COMPARE_DATES compiled
+anonymous block completed
+01-JAN-11 and 02-FEB-22 in returns   -1
+01-JAN-11 and 01-JAN-11 in returns   0
+02-FEB-22 and 01-JAN-11 in returns   1
+
+PROCEDURE CUST_INFO compiled
+anonymous block completed
+Cust_ID   Cust_Name   Acct_ID   A_Type  State
+90001     B and B     A-11101   PR      AK
+Account_ID not valid
+Cust_ID   Cust_Name   Acct_ID   A_Type  State
+99999     xxxxxxx     x-99999   xx      xx
+
+table PHYSICIAN created.
+1 rows inserted.
+1 rows inserted.
+   PHYS_ID PHYS_NAME            PHYS_PHONE PHYS_SPECIALTY     
+---------- -------------------- ---------- --------------------
+      1234 Dr. Octopus          1234567890 Squidology           
+      2005 Dr. Who              4196322015 Temporal Ontology    
+
+old:declare
+  -- variables that are %types of the table
+  -- values 1234, Blavatsky, 9876543210, Metaphysician
+  lv_id Physician.Phys_ID%type := &id;
+  lv_name Physician.Phys_name%type := '&name';
+  lv_phone Physician.Phys_phone%type := &phone;
+  lv_spec Physician.Phys_specialty%type := '&spec';
+  
+  -- variable for holding an integer
+  lv_check number(1);
+  
+  begin
+      
+      -- see if our id is in the table
+      select count(*) into lv_check from Physician
+      where Phys_ID = lv_id;
+      
+      -- if to decide whether to update or insert
+      if lv_check = 1 then
+      
+        -- update the table using bind variables
+        update Physician
+          set Phys_name = lv_name,
+              Phys_phone = lv_phone,
+              Phys_specialty = lv_spec
+          where Phys_ID = lv_id;
+          
+      else
+        -- or insert new values into table
+        insert into Physician
+          values (lv_id, lv_name, lv_phone, lv_spec);
+          
+      end if; -- end if
+    
+end; -- end anonymous block
+new:declare
+  -- variables that are %types of the table
+  -- values 1234, Blavatsky, 9876543210, Metaphysician
+  lv_id Physician.Phys_ID%type := 1234;
+  lv_name Physician.Phys_name%type := 'Doc Blavatsky';
+  lv_phone Physician.Phys_phone%type := 0987654321;
+  lv_spec Physician.Phys_specialty%type := 'Metaphysician';
+  
+  -- variable for holding an integer
+  lv_check number(1);
+  
+  begin
+      
+      -- see if our id is in the table
+      select count(*) into lv_check from Physician
+      where Phys_ID = lv_id;
+      
+      -- if to decide whether to update or insert
+      if lv_check = 1 then
+      
+        -- update the table using bind variables
+        update Physician
+          set Phys_name = lv_name,
+              Phys_phone = lv_phone,
+              Phys_specialty = lv_spec
+          where Phys_ID = lv_id;
+          
+      else
+        -- or insert new values into table
+        insert into Physician
+          values (lv_id, lv_name, lv_phone, lv_spec);
+          
+      end if; -- end if
+    
+end; -- end anonymous block
+anonymous block completed
+old:declare
+  -- values 9999, Halle Tosis, 9999999999, Freshology
+  lv_id Physician.Phys_ID%type := &id;
+  lv_name Physician.Phys_name%type := '&name';
+  lv_phone Physician.Phys_phone%type := &phone;
+  lv_spec Physician.Phys_specialty%type := '&spec';
+  lv_check number(1);
+  begin
+      select count(*) into lv_check from Physician
+      where Phys_ID = lv_id;
+      if lv_check = 1 then
+        update Physician
+          set Phys_name = lv_name,
+              Phys_phone = lv_phone,
+              Phys_specialty = lv_spec
+          where Phys_ID = lv_id;
+      else
+        insert into Physician
+          values (lv_id, lv_name, lv_phone, lv_spec);
+      end if;
+end; -- end 2nd run
+new:declare
+  -- values 9999, Halle Tosis, 9999999999, Freshology
+  lv_id Physician.Phys_ID%type := 9999;
+  lv_name Physician.Phys_name%type := 'Halle Tosis';
+  lv_phone Physician.Phys_phone%type := 9999999999;
+  lv_spec Physician.Phys_specialty%type := 'Freshology';
+  lv_check number(1);
+  begin
+      select count(*) into lv_check from Physician
+      where Phys_ID = lv_id;
+      if lv_check = 1 then
+        update Physician
+          set Phys_name = lv_name,
+              Phys_phone = lv_phone,
+              Phys_specialty = lv_spec
+          where Phys_ID = lv_id;
+      else
+        insert into Physician
+          values (lv_id, lv_name, lv_phone, lv_spec);
+      end if;
+end; -- end 2nd run
+anonymous block completed
+   PHYS_ID PHYS_NAME            PHYS_PHONE PHYS_SPECIALTY     
+---------- -------------------- ---------- --------------------
+      1234 Doc Blavatsky         987654321 Metaphysician        
+      2005 Dr. Who              4196322015 Temporal Ontology    
+      9999 Halle Tosis          9999999999 Freshology           
+
+table PHYSICIAN dropped.
+FUNCTION STRING_ADJUST compiled
+anonymous block completed
+Now is the Time.<end
+Now is<end
+6
+Now is the Time.<end
+Now is the Time.         <end
+25
+    Now is the Time.         <end
+Now is the Time<end
+15
+
