@@ -1,0 +1,70 @@
+desc user_objects
+Name           Null Type          
+-------------- ---- ------------- 
+OBJECT_NAME         VARCHAR2(128) 
+SUBOBJECT_NAME      VARCHAR2(30)  
+OBJECT_ID           NUMBER        
+DATA_OBJECT_ID      NUMBER        
+OBJECT_TYPE         VARCHAR2(19)  
+CREATED             DATE          
+LAST_DDL_TIME       DATE          
+TIMESTAMP           VARCHAR2(19)  
+STATUS              VARCHAR2(7)   
+TEMPORARY           VARCHAR2(1)   
+GENERATED           VARCHAR2(1)   
+SECONDARY           VARCHAR2(1)   
+NAMESPACE           NUMBER        
+EDITION_NAME        VARCHAR2(30)  
+
+OBJECT_NAME             STATUS  TIMESTAMP         
+----------------------- ------- -------------------
+PROD_ADD_SP             INVALID 2015-06-22:23:23:25 
+SHIP_COST_SP            VALID   2015-06-30:13:12:57 
+ORDER_TOTAL_SP          VALID   2015-06-30:13:13:00 
+ORDER_TOTAL_SP2         VALID   2015-06-30:13:13:02 
+STOCK_CK_SP             VALID   2015-06-30:13:13:02 
+MEMBER_CK_SP            VALID   2015-06-30:13:13:02 
+LOGIN_SP                INVALID 2015-06-30:13:13:59 
+LOGIN2_SP               INVALID 2015-06-30:13:14:34 
+TEST_NOCOPY_SP          VALID   2015-06-30:13:13:04 
+RUN_NOCOPY_SP           VALID   2015-06-30:13:13:04 
+TAX_COST_SP             INVALID 2015-06-22:23:23:25 
+BASKET_CONFIRM_SP       INVALID 2015-06-22:23:23:25 
+BASK_CALC_SP            VALID   2015-06-30:13:13:05 
+PROMO_TEST_SP           VALID   2015-06-30:13:13:06 
+TC_TEST_SP2             VALID   2015-06-30:13:13:06 
+TC_TEST_SP1             VALID   2015-06-30:13:13:06 
+PHONE_FMT_SP            VALID   2015-06-30:13:13:06 
+PROD_NAME_SP            INVALID 2015-06-22:23:23:24 
+STATUS_SHIP_SP          INVALID 2015-06-22:23:23:25 
+STATUS_SP               VALID   2015-06-30:13:13:05 
+PROMO_SHIP_SP           INVALID 2015-06-22:23:23:26 
+FIND_EMP_DATA           VALID   2015-06-26:19:30:18 
+CUST_INFO               VALID   2015-06-26:19:30:18 
+BASKET_ADD_SP           INVALID 2015-06-22:23:23:26 
+
+ 24 rows selected 
+
+desc user_dependencies
+Name                 Null     Type          
+-------------------- -------- ------------- 
+NAME                 NOT NULL VARCHAR2(30)  
+TYPE                          VARCHAR2(18)  
+REFERENCED_OWNER              VARCHAR2(30)  
+REFERENCED_NAME               VARCHAR2(64)  
+REFERENCED_TYPE               VARCHAR2(18)  
+REFERENCED_LINK_NAME          VARCHAR2(128) 
+SCHEMAID                      NUMBER        
+DEPENDENCY_TYPE               VARCHAR2(4)   
+
+NAME            TYPE             
+--------------- ------------------
+BASK_CALC_SP    PROCEDURE          
+BB_SHIP_VU      VIEW               
+ORDER_INFO_PKG  PACKAGE BODY       
+PROMO_TEST_SP   PROCEDURE          
+STATUS_SP       PROCEDURE          
+TAX_CALC2_SF    FUNCTION           
+
+ 6 rows selected 
+
