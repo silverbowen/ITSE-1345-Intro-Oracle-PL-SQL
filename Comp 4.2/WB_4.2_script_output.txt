@@ -1,0 +1,36 @@
+TRIGGER BB_REORDER_TRG compiled
+     STOCK    REORDER
+---------- ----------
+        26         25 
+
+no rows selected
+
+
+1 rows updated.
+ IDPRODUCT  IDREQUEST DTREQUEST        QTY
+---------- ---------- --------- ----------
+         4          1 06-JUL-15         25 
+
+rollback complete.
+trigger BB_REORDER_TRG dropped.
+1 rows inserted.
+TRIGGER BB_REQFILL_TRG compiled
+     STOCK    REORDER
+---------- ----------
+        41         45 
+
+ IDPRODUCT  IDREQUEST DTREQUEST       COST        QTY
+---------- ---------- --------- ---------- ----------
+         5          3 06-JUL-15                    45 
+
+1 rows updated.
+ IDPRODUCT  IDREQUEST DTREQUEST       COST        QTY
+---------- ---------- --------- ---------- ----------
+         5          3 06-JUL-15        225         45 
+
+     STOCK    REORDER
+---------- ----------
+        86         45 
+
+rollback complete.
+trigger BB_REQFILL_TRG dropped.
