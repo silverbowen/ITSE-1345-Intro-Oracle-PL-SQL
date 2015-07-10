@@ -1,0 +1,2 @@
+TRIGGER REORDER compiled
+1 rows updated.
