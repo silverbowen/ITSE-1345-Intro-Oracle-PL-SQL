@@ -1,0 +1,38 @@
+
+90001 to 90008
+
+90001 has a purchase order.
+90002 does not have a purchase order.
+90003 does not have a purchase order.
+90004 has a purchase order.
+90005 has a purchase order.
+90006 does not have a purchase order.
+90007 has a purchase order.
+90008 has a purchase order.
+
+90003 to 90007
+
+90003 does not have a purchase order.
+90004 has a purchase order.
+90005 has a purchase order.
+90006 does not have a purchase order.
+90007 has a purchase order.
+
+90009 to 90010
+
+90009 does not have a purchase order.
+90010 does not have a purchase order.
+
+90005 to 90004
+
+Error! 1st customer Id must be less than 2nd customer ID.
+
+
+3249 returns true
+Cribbs, John returns true
+Knott, Reel returns false
+
+Physician is already in table!
+
+10 rows processed.
+

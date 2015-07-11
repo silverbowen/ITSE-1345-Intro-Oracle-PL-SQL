@@ -1,0 +1,181 @@
+PROCEDURE FIND_PURCHASE compiled
+anonymous block completed
+
+90001 to 90008
+
+90001 has a purchase order.
+90002 does not have a purchase order.
+90003 does not have a purchase order.
+90004 has a purchase order.
+90005 has a purchase order.
+90006 does not have a purchase order.
+90007 has a purchase order.
+90008 has a purchase order.
+
+90003 to 90007
+
+90003 does not have a purchase order.
+90004 has a purchase order.
+90005 has a purchase order.
+90006 does not have a purchase order.
+90007 has a purchase order.
+
+90009 to 90010
+
+90009 does not have a purchase order.
+90010 does not have a purchase order.
+
+90005 to 90004
+
+Error! 1st customer Id must be less than 2nd customer ID.
+
+
+table PHYSICIAN created.
+table PATIENT created.
+table PROCEDURE created.
+table TREATMENT created.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+1 rows inserted.
+   PHYS_ID PHYS_NAME            PHYS_PHONE   PHYS_SPECIALTY     
+---------- -------------------- ------------ --------------------
+       101 Wilcox, Chris        512-329-1848 Eyes, Ears, Throat   
+       102 Nusca, Jane          512-516-3947 Cardiovascular       
+       103 Gomez, Juan          512-382-4987 Orthopedics          
+       104 Li, Jan              512-516-3948 Cardiovascular       
+       105 Simmons, Alex        512-442-5700 Hemotology           
+
+   PAT_NBR PAT_NAME             PAT_ADDRESS          PAT_CITY 
+---------- -------------------- -------------------- ----------
+      1379 Cribbs, John         2110 Main St.        Austin     
+      3249 Baker, Mary          3547 W. 42nd St.     Berkeley   
+      4500 Garcia, Juan         1533 Telegraph       Berkeley   
+      5116 Harris, Carol        4710 Ave. E          Austin     
+      5872 Zimmer, Elka         7988 Cedar           Cleveland  
+      6213 Rose, David          322 Bridge Ave.      Redwood    
+      7459 Smith, Chris         788 Cummings         Cleveland  
+      8031 Fitch, Sylvia        3380 Fox Ave.        Madison    
+      8659 Hernandez, Juan      8300 Geneva Dr.      Austin     
+
+ 9 rows selected 
+
+PAT_STATE    PAT_ZIP   PAT_ROOM    PAT_BED
+--------- ---------- ---------- ----------
+TX             78711        101          1 
+CA             94117        137          2 
+CA             94117        228          2 
+TX             78705        438          1 
+OH             44060        137          1 
+CA             94065        100          1 
+OH             44066        438          3 
+WI             53711        420          4 
+TX             78723        350          2 
+
+ 9 rows selected 
+
+PRO_NBR PRO_DESC        PRO_CHARGE
+------- --------------- ----------
+13-08   Throat culture          15 
+27-45   X-Ray                   62 
+52-14   Cardiogram             135 
+60-00   Blood Analysis          58 
+88-20   MRI                    800 
+
+   PAT_NBR    PHYS_ID TRT_PROCEDURE TRT_DATE
+---------- ---------- ------------- ---------
+      3249        101 13-08         12-FEB-99 
+      1379        103 27-45         25-MAR-99 
+      3249        103 88-20         22-JAN-99 
+      5116        104 52-14         03-APR-99 
+      4500        101 13-08         04-FEB-99 
+      8031        102 52-14         15-MAR-00 
+      5116        104 52-14         05-FEB-01 
+      5872        105 60-00         13-FEB-00 
+      3249        103 88-20         24-JAN-00 
+      8659        104 60-00         08-APR-01 
+
+ 10 rows selected 
+
+table T_PATTRT created.
+PACKAGE HOSPITAL compiled
+PACKAGE BODY HOSPITAL compiled
+anonymous block completed
+3249 returns true
+Cribbs, John returns true
+Knott, Reel returns false
+
+anonymous block completed
+Physician is already in table!
+
+   PHYS_ID PHYS_NAME            PHYS_PHONE   PHYS_SPECIALTY     
+---------- -------------------- ------------ --------------------
+       333 Knott, Reel          512-884-4488 Leg Replacement      
+
+no rows selected
+
+
+anonymous block completed
+10 rows processed.
+
+ T_PATIENT T_TREATMENT  T_PHYS_ID T_PHYS_NAME          T_PHYS_SPEC        
+---------- ----------- ---------- -------------------- --------------------
+      3249 13-08              101 Wilcox, Chris        Eyes, Ears, Throat   
+      1379 27-45              103 Gomez, Juan          Orthopedics          
+      3249 88-20              103 Gomez, Juan          Orthopedics          
+      5116 52-14              104 Li, Jan              Cardiovascular       
+      4500 13-08              101 Wilcox, Chris        Eyes, Ears, Throat   
+      8031 52-14              102 Nusca, Jane          Cardiovascular       
+      5116 52-14              104 Li, Jan              Cardiovascular       
+      5872 60-00              105 Simmons, Alex        Hemotology           
+      3249 88-20              103 Gomez, Juan          Orthopedics          
+      8659 60-00              104 Li, Jan              Cardiovascular       
+
+ 10 rows selected 
+
+TRIGGER UPDATE_TREATMENT compiled
+1 rows inserted.
+
+Error starting at line : 569 in command -
+insert into Treatment
+  values(8659, 103, '60-00', '01-APR-2015')
+Error report -
+SQL Error: ORA-20100: Invalid treatment date
+ORA-06512: at "ITSE1345.UPDATE_TREATMENT", line 7
+ORA-04088: error during execution of trigger 'ITSE1345.UPDATE_TREATMENT'
+
+   PAT_NBR    PHYS_ID TRT_PROCEDURE TRT_DATE
+---------- ---------- ------------- ---------
+      8659        104 60-00         08-APR-01 
+      8659        104 60-00         10-JUL-15 
+
+table T_PATTRT dropped.
+table TREATMENT dropped.
+table PROCEDURE dropped.
+table PATIENT dropped.
+table PHYSICIAN dropped.
